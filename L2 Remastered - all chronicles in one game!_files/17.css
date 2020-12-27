@@ -1,0 +1,527 @@
+/* Breakpoints */
+/* Common Mixins */
+/*
+ * SVG styles and reset.
+ * Pointer events are set to none due to an IE event.
+ * Wrap all SVGs in a container and bind events to that container
+ */
+.theme-button {
+  color: black;
+  line-height: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 2px;
+}
+
+#riotbar-bar svg, #riotbar-subbar .riotbar-footer svg, #riotbar-application-switcher svg {
+  pointer-events: none;
+}
+#riotbar-bar svg.hide, #riotbar-subbar .riotbar-footer svg.hide, #riotbar-application-switcher svg.hide {
+  display: none;
+}
+#riotbar-bar svg.block, #riotbar-subbar .riotbar-footer svg.block, #riotbar-application-switcher svg.block {
+  display: block;
+}
+#riotbar-bar svg.inline-block, #riotbar-subbar .riotbar-footer svg.inline-block, #riotbar-application-switcher svg.inline-block {
+  display: inline-block;
+}
+#riotbar-bar svg.float-left, #riotbar-subbar .riotbar-footer svg.float-left, #riotbar-application-switcher svg.float-left {
+  float: left;
+}
+#riotbar-bar svg.float-right, #riotbar-subbar .riotbar-footer svg.float-right, #riotbar-application-switcher svg.float-right {
+  float: right;
+}
+#riotbar-bar svg use, #riotbar-subbar .riotbar-footer svg use, #riotbar-application-switcher svg use {
+  pointer-events: none;
+}
+
+.riotbar-root {
+  position: static;
+}
+
+body.riotbar-present {
+  margin: 0px;
+  overflow-x: hidden;
+  padding: 0px;
+  position: static;
+}
+
+.riotbar-clearfix {
+  zoom: 1;
+  /* ie 6/7 */
+}
+.riotbar-clearfix:before, .riotbar-clearfix:after {
+  content: "";
+  display: table;
+}
+.riotbar-clearfix:after {
+  clear: both;
+}
+
+.riotbar-base-element {
+  /* RiotBar Reset
+     based on Eric Meyer's CSS Reset, but targeted within .riotbar
+        - http://meyerweb.com/eric/tools/css/reset/
+     Note
+       - removed html & body selectors, which don't apply for .riotbar
+       - To optimize the generated css, we have commented out some unused selectors
+  */
+  /* HTML5 display-role reset for older browsers */
+  /*
+    @TODO: do we want to size some things to the size of the content?
+    - the locale switcher would be a good example of something where this would apply.
+
+    We can creat a new class like this which can be applied to elements like the `riotbar-subbar` ...
+       ... which perhaps should be renamed the `riotbar-document-bar`
+
+    .riotbar-docwidth {
+      width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+
+    This width attribute of this css would then become a configuration option,
+    which apps could override.  We would use js to set the width property of the class.
+    This way our templates and css can easily adapt to the various desktop page widths that we encounter.
+    The configuration option might not be a simple width.  Perhaps, if we provide a breakpoint declaration
+    system in the configs, then we cana more complex breakpoint system rule s
+
+
+   */
+}
+.riotbar-base-element,
+.riotbar-base-element div, .riotbar-base-element span,
+.riotbar-base-element h1, .riotbar-base-element h2, .riotbar-base-element h3, .riotbar-base-element h4, .riotbar-base-element h5, .riotbar-base-element h6,
+.riotbar-base-element a,
+.riotbar-base-element img,
+.riotbar-base-element ol, .riotbar-base-element ul, .riotbar-base-element li,
+.riotbar-base-element strong, .riotbar-base-element em {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  /* These custom font references are actually loaded in when the `customFonts` plugin is enabled */
+  /* Main font by default */
+  font-family: "FF Mark W05";
+  vertical-align: baseline;
+  /* prevent text selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Fix webkit fonts */
+  -webkit-font-smoothing: antialiased;
+}
+.riotbar-base-element:lang(ar),
+.riotbar-base-element div:lang(ar), .riotbar-base-element span:lang(ar),
+.riotbar-base-element h1:lang(ar), .riotbar-base-element h2:lang(ar), .riotbar-base-element h3:lang(ar), .riotbar-base-element h4:lang(ar), .riotbar-base-element h5:lang(ar), .riotbar-base-element h6:lang(ar),
+.riotbar-base-element a:lang(ar),
+.riotbar-base-element img:lang(ar),
+.riotbar-base-element ol:lang(ar), .riotbar-base-element ul:lang(ar), .riotbar-base-element li:lang(ar),
+.riotbar-base-element strong:lang(ar), .riotbar-base-element em:lang(ar) {
+  font-family: "Cairo", Tahoma, sans-serif;
+}
+.riotbar-base-element:lang(ru),
+.riotbar-base-element div:lang(ru), .riotbar-base-element span:lang(ru),
+.riotbar-base-element h1:lang(ru), .riotbar-base-element h2:lang(ru), .riotbar-base-element h3:lang(ru), .riotbar-base-element h4:lang(ru), .riotbar-base-element h5:lang(ru), .riotbar-base-element h6:lang(ru),
+.riotbar-base-element a:lang(ru),
+.riotbar-base-element img:lang(ru),
+.riotbar-base-element ol:lang(ru), .riotbar-base-element ul:lang(ru), .riotbar-base-element li:lang(ru),
+.riotbar-base-element strong:lang(ru), .riotbar-base-element em:lang(ru) {
+  font-family: "Neue Frutiger World W05", Tahoma, sans-serif;
+}
+.riotbar-base-element:lang(ko), .riotbar-base-element:lang(kr),
+.riotbar-base-element div:lang(ko),
+.riotbar-base-element div:lang(kr), .riotbar-base-element span:lang(ko), .riotbar-base-element span:lang(kr),
+.riotbar-base-element h1:lang(ko),
+.riotbar-base-element h1:lang(kr), .riotbar-base-element h2:lang(ko), .riotbar-base-element h2:lang(kr), .riotbar-base-element h3:lang(ko), .riotbar-base-element h3:lang(kr), .riotbar-base-element h4:lang(ko), .riotbar-base-element h4:lang(kr), .riotbar-base-element h5:lang(ko), .riotbar-base-element h5:lang(kr), .riotbar-base-element h6:lang(ko), .riotbar-base-element h6:lang(kr),
+.riotbar-base-element a:lang(ko),
+.riotbar-base-element a:lang(kr),
+.riotbar-base-element img:lang(ko),
+.riotbar-base-element img:lang(kr),
+.riotbar-base-element ol:lang(ko),
+.riotbar-base-element ol:lang(kr), .riotbar-base-element ul:lang(ko), .riotbar-base-element ul:lang(kr), .riotbar-base-element li:lang(ko), .riotbar-base-element li:lang(kr),
+.riotbar-base-element strong:lang(ko),
+.riotbar-base-element strong:lang(kr), .riotbar-base-element em:lang(ko), .riotbar-base-element em:lang(kr) {
+  font-family: "RixSGo", Tahoma, sans-serif;
+}
+.riotbar-base-element ol, .riotbar-base-element ul {
+  list-style: none;
+}
+.riotbar-base-element,
+.riotbar-base-element * {
+  box-sizing: border-box;
+  position: static;
+  /* default to ensure overrides from other websites don't mess with us */
+}
+.riotbar-base-element .riotbar-pagewidth {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+}
+.riotbar-base-element a,
+.riotbar-base-element a:link,
+.riotbar-base-element a:visited {
+  text-decoration: none;
+  color: #F9F9F9;
+}
+
+#riotbar-bar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+}
+
+#riotbar-bar .sub-menu-header-icon {
+  color: #F9F9F9;
+}
+#riotbar-bar .sub-menu-header-icon svg, #riotbar-bar .sub-menu-header-icon span {
+  display: none;
+  float: left;
+}
+#riotbar-bar:lang(ar) {
+  font-family: "Cairo", Tahoma, sans-serif;
+}
+#riotbar-bar:lang(ru) {
+  font-family: "Neue Frutiger World W05", Tahoma, sans-serif;
+}
+#riotbar-bar:lang(ko), #riotbar-bar:lang(kr) {
+  font-family: "RixSGo", Tahoma, sans-serif;
+}
+#riotbar-bar .riotbar-navbar-separator {
+  border-left: 2px solid #7E7E7E;
+  display: inline-block;
+  font-size: 14px;
+  height: 30px;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  margin-top: 24px;
+  vertical-align: top;
+  opacity: 0.4;
+}
+#riotbar-bar .riotbar-navbar-separator.riotbar-title-separator {
+  margin-right: 0.85em;
+}
+#riotbar-bar .riotbar-bar-content {
+  text-align: center;
+  height: 80px;
+}
+#riotbar-bar .riotbar-left-content, #riotbar-bar .riotbar-content {
+  opacity: 1;
+  transition: opacity 0.5s cubic-bezier(0.06, 0.81, 0, 0.98) 0s;
+}
+#riotbar-bar.sidebar-open .riotbar-bar-content, #riotbar-bar.sidebar-open .riotbar-left-content {
+  opacity: 0.25;
+}
+#riotbar-bar .riotbar-right-mobile-content {
+  display: none;
+  right: 70px;
+}
+@media (max-width: 1024px) {
+  #riotbar-bar .riotbar-right-mobile-content {
+    display: block;
+  }
+  #riotbar-bar .riotbar-right-mobile-content #riotbar-service-status-messages {
+    right: -10px;
+  }
+}
+#riotbar-bar .riotbar-left-content, #riotbar-bar .riotbar-right-content, #riotbar-bar .riotbar-right-mobile-content {
+  bottom: 0;
+  position: absolute;
+  top: 0;
+}
+@media (max-width: 1024px) {
+  #riotbar-bar.riotbar-mobile-responsive .riotbar-right-content .riotbar-navmenu-dropdown {
+    transform: translateX(100%);
+    width: 315px;
+    overflow-y: auto;
+  }
+}
+#riotbar-bar .riotbar-right-content {
+  right: 0px;
+  padding-right: 16px;
+}
+@media (max-width: 1024px) {
+  #riotbar-bar .riotbar-right-content #riotbar-service-status, #riotbar-bar .riotbar-right-content #riotbar-account {
+    display: none;
+  }
+}
+#riotbar-bar .riotbar-right-content .riotbar-right-content-icons {
+  margin: 0px 12px;
+  float: left;
+  white-space: nowrap;
+  color: #F9F9F9;
+}
+#riotbar-bar .riotbar-right-content .riotbar-right-content-icons .lang-switch-trigger {
+  cursor: pointer;
+  display: block;
+}
+#riotbar-bar .riotbar-right-content .riotbar-right-content-icons .riotbar-navmenu-right-icon {
+  float: left;
+}
+#riotbar-bar .riotbar-right-content .riotbar-right-content-icons .riotbar-navmenu-right-icon .lang-switch-trigger svg {
+  margin-top: 32px;
+  pointer-events: none;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown {
+  background: #212121;
+  border-top: 2px solid #262626;
+  box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.5);
+  right: -5px;
+  margin: 0;
+  opacity: 0;
+  overflow: visible;
+  padding-bottom: 18px;
+  position: fixed;
+  height: 100%;
+  text-align: left;
+  transform: translateY(-5%);
+  top: 0px;
+  visibility: hidden;
+  width: 460px;
+  z-index: 10;
+  transition: transform 300ms, opacity 300ms;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown .lang-switch-dropdown {
+  z-index: 11;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown a {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown.riotbar-click-active {
+  visibility: visible;
+  transform: translateX(0%);
+  opacity: 1;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown.slide-out {
+  visibility: visible;
+  transform: translateX(100%);
+  opacity: 1;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown .sub-menu-header {
+  height: 78px;
+  background-color: #111111;
+  border-bottom: 2px solid #262626;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown .sub-menu-header a {
+  cursor: pointer;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown .sub-menu-header .sub-menu-header-text {
+  font-size: 18px;
+  position: absolute;
+  top: 22px;
+  left: 40px;
+  color: #F9F9F9;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown .sub-menu-header .sub-menu-back {
+  position: absolute;
+  top: 20px;
+  height: 30px;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown .sub-menu-header .sub-menu-back svg {
+  display: inline-block;
+  margin-top: 12px;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown .sub-menu-header .sub-menu-close {
+  position: absolute;
+  top: 21px;
+  right: 31px;
+  width: 32px;
+  height: 32px;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown .sub-menu-header .sub-menu-close svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown .side-menu-icon {
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  width: 10px;
+  height: 10px;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-dropdown .side-menu-icon svg {
+  display: block;
+}
+#riotbar-bar .riotbar-right-content .riotbar-navmenu-touchpoints, #riotbar-bar .riotbar-right-content .riotbar-navmenu-links {
+  transition: opacity 0.2s linear;
+}
+#riotbar-bar .riotbar-right-content.riotbar-click-active .riotbar-navmenu-touchpoints {
+  display: block;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  transition: color 1s cubic-bezier(0.06, 0.81, 0, 0.98);
+  border-bottom: 1px solid #111111;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link.disabled {
+  color: #7E7E7E;
+  cursor: default;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link.disabled svg {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  fill: #7E7E7E;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link.riotbar-active-link {
+  background-color: #333333;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link:lang(ar) {
+  letter-spacing: 0;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link.riotbar-active-link {
+  color: #F9F9F9;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link:last-child {
+  margin-bottom: 0;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link.show-auth-sub-menu {
+  text-transform: none;
+  background-color: #171717;
+  letter-spacing: 0;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link.show-auth-sub-menu svg.arrow-down {
+  margin-left: 10px;
+  margin-bottom: 3px;
+  transform: rotate(270deg);
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link .sideMenuIcons {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100px;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link .sideMenuIcons .lang-switch-trigger {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: 31px;
+  top: 5px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #212121;
+}
+#riotbar-bar .riotbar-right-content a.riotbar-navmenu-link .sideMenuIcons .lang-switch-trigger svg {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+}
+#riotbar-bar .riotbar-right-content.riotbar-menu-transition .riotbar-navmenu-touchpoints, #riotbar-bar .riotbar-right-content.riotbar-menu-transition .riotbar-navmenu-links {
+  opacity: 0;
+}
+#riotbar-bar .riotbar-right-content.riotbar-show-links .riotbar-navmenu-links {
+  display: block;
+}
+#riotbar-bar #riotbar-mobile-nav {
+  display: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+#riotbar-bar #riotbar-mobile-nav a {
+  margin-top: 23px;
+  display: inline-block;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  #riotbar-bar #riotbar-mobile-nav {
+    display: inline !important;
+  }
+}
+
+#riotbar-subbar {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+  /* this z-index is questionable, but is required to place it above the lolkit header */
+  pointer-events: none;
+  text-align: left;
+}
+#riotbar-subbar:lang(ar) {
+  direction: rtl;
+}
+#riotbar-subbar .riotbar-subcontent {
+  pointer-events: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  #riotbar-bar .riotbar-right-content a.riotbar-navmenu-link .sideMenuIcons .lang-switch-trigger {
+    top: 12px;
+    right: 30px;
+  }
+}
+/** Global Keyframes **/
+/* Keyframes */
+/* Basic Fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Slide in from left animation */
+@keyframes slideInFromLeft {
+  0% {
+    left: -76vw;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-moz-keyframes slideInFromLeft {
+  0% {
+    left: -76vw;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    left: -76vw;
+  }
+  100% {
+    left: 0;
+  }
+}

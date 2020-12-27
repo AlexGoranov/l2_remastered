@@ -1,0 +1,81 @@
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+.tabHeaderClick {
+	width: 100%;
+    height: 100%;
+    top: 0px;
+	position: absolute;
+	z-index: 999;
+}
+
+.tabHeaderItem {
+	position: relative;
+}
+
+.activeVH {
+	border-color: #542a28;
+    background: #462210;
+}
+
+.m_popUp_container {
+	min-width: 180px;
+	max-width: 300px;
+	max-height: 275px;
+	transition: 1s;
+	position: absolute;
+	z-index: 2;
+	background: #1b1215;
+	padding: 10px 20px;	
+	border: 1px solid #2a161c;
+	box-shadow: inset 0px 0px 20px 4px rgb(42, 22, 28), 0 0 10px 0px rgba(121, 59, 59, 0.9), inset 0 0 5px 2px rgb(41, 30, 33);
+	overflow: hidden;
+	color: #c4b998 !important;
+}
+
+.m_popUp_container2 {
+	min-width: 180px;
+	max-width: 300px;
+	max-height: 275px;
+	position: fixed;
+	z-index: 2;
+	background: #1b1215;
+	padding: 10px 20px;	
+	border: 1px solid #2a161c;
+	box-shadow: inset 0px 0px 20px 4px rgb(42, 22, 28), 0 0 10px 0px rgba(121, 59, 59, 0.9), inset 0 0 5px 2px rgb(41, 30, 33);
+	overflow: hidden;
+	color: #c4b998 !important;
+}
+
+.m_popUp_container ul li, .m_popUp_container2 ul li{
+	list-style-type: none;
+	color:#937341 !important;
+	margin-left: 0px !important;
+	font-size: 14px !important;
+}
+
+.m_popUp_container span, .m_popUp_container2 span {
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
+}
+
+.m_popUp_description {
+	cursor: help;
+}
+.titleNice {
+    font-weight: 500;
+    color: #7b7b77;
+}
+.descNice {
+    font-weight: 300;
+    color: #bdb292;
+    font-size: 14px;
+    margin-top: 3px;
+
+}

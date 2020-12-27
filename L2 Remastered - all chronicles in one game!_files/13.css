@@ -1,0 +1,613 @@
+.riotbar-footer {
+  user-select: none;
+  box-sizing: border-box;
+}
+.riotbar-footer * {
+  box-sizing: border-box;
+}
+
+.riotbar-footer {
+  text-align: center;
+}
+.riotbar-footer:lang(ar) {
+  direction: rtl;
+}
+
+.riotbar-footer-content {
+  padding: 1px 5px;
+}
+.riotbar-footer-content.default-background {
+  background-color: #111111;
+  border-top: 2px solid rgba(51, 51, 51, 0.25);
+}
+.riotbar-footer-content > div {
+  margin: 40px auto;
+} .riotbar-footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.riotbar-footer-links {
+  user-select: none;
+  box-sizing: border-box;
+}
+.riotbar-footer-links * {
+  box-sizing: border-box;
+}
+
+/* Breakpoints */
+/* Common Mixins */
+.riotbar-footer-links {
+  color: #7E7E7E;
+  /* These custom font references are actually loaded in when the `customFonts` plugin is enabled */
+  /* Main font by default */
+  font-family: "FF Mark W05";
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.riotbar-footer-links:lang(ar) {
+  font-family: "Cairo", Tahoma, sans-serif;
+}
+.riotbar-footer-links:lang(ru) {
+  font-family: "Neue Frutiger World W05", Tahoma, sans-serif;
+}
+.riotbar-footer-links:lang(ko), .riotbar-footer-links:lang(kr) {
+  font-family: "RixSGo", Tahoma, sans-serif;
+}
+.riotbar-footer-links:lang(ar) {
+  letter-spacing: 0;
+}
+.riotbar-footer-links ul li a {
+  display: block;
+  margin: 0 16px;
+  padding: 0px;
+  text-decoration: none;
+  color: #7E7E7E;
+  transition: all 0.2s linear;
+ font-family:Beaufort for LOL,Arial,sans-serif;
+}
+.riotbar-footer-links ul li a:visited {
+  color: #7E7E7E;
+}
+.riotbar-footer-links ul li a:hover, .riotbar-footer-links ul li a:active, .riotbar-footer-links ul li a:focus {
+  color: #F9F9F9;
+}
+@media (max-width: 640px) {
+  .riotbar-footer-links ul {
+    flex-direction: column;
+  }
+  .riotbar-footer-links ul li a {
+    margin: 16px 0;
+  }
+  .riotbar-footer-links ul li:first-child a {
+    margin-top: 0;
+  }
+  .riotbar-footer-links ul li:last-child a {
+    margin-bottom: 0;
+  }
+} .riotbar-footer-riot-logo {
+  user-select: none;
+  box-sizing: border-box;
+}
+.riotbar-footer-riot-logo * {
+  box-sizing: border-box;
+}
+
+.riotbar-footer-riot-logo a .image-alt-text {
+  opacity: 0;
+  user-select: none;
+  color: transparent;
+  text-decoration: none;
+}
+
+.riotbar-footer-riot-logo a {
+  display: inline-block;
+  margin: auto;
+  overflow: hidden;
+  opacity: 0.9;
+  transition: opacity 0.2s linear;
+}
+.riotbar-footer-riot-logo a:hover, .riotbar-footer-riot-logo a:active, .riotbar-footer-riot-logo a:focus {
+  opacity: 1;
+} .riotbar-footer-riot-locale {
+  user-select: none;
+  box-sizing: border-box;
+}
+.riotbar-footer-riot-locale * {
+  box-sizing: border-box;
+}
+
+/* Breakpoints */
+/* Common Mixins */
+.riotbar-footer-riot-locale {
+  /* These custom font references are actually loaded in when the `customFonts` plugin is enabled */
+  /* Main font by default */
+  font-family: "FF Mark W05";
+  font-weight: 500;
+  z-index: 100;
+  position: relative;
+  color: #F9F9F9;
+  width: 600px;
+}
+.riotbar-footer-riot-locale button {
+  outline: 0;
+}
+.riotbar-footer-riot-locale .localization-management-list ul {
+  background-color: #F9F9F9;
+}
+.riotbar-footer-riot-locale .localization-management-list ul li a, .riotbar-footer-riot-locale .localization-management-list ul li a:visited, .riotbar-footer-riot-locale .localization-management-list ul li a:link {
+  color: #7E7E7E;
+}
+.riotbar-footer-riot-locale .localization-management-list ul li:hover a {
+  color: #333333;
+}
+.riotbar-footer-riot-locale .localization-management-list ul li.active {
+  cursor: default;
+}
+.riotbar-footer-riot-locale:lang(ar) {
+  font-family: "Cairo", Tahoma, sans-serif;
+}
+.riotbar-footer-riot-locale:lang(ru) {
+  font-family: "Neue Frutiger World W05", Tahoma, sans-serif;
+}
+.riotbar-footer-riot-locale:lang(ko), .riotbar-footer-riot-locale:lang(kr) {
+  font-family: "RixSGo", Tahoma, sans-serif;
+}
+@media (max-width: 1024px) {
+  .riotbar-footer-riot-locale #footer-region-switcher-activate {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .riotbar-footer-riot-locale .second.region-chooser-button-holder {
+    display: block;
+    margin: 0 !important;
+  }
+  .riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list {
+    left: 180px;
+  }
+}
+.riotbar-footer-riot-locale .region-chooser-button {
+  letter-spacing: 0;
+  outline: 0;
+  line-height: 48px;
+}
+.riotbar-footer-riot-locale .region-chooser-button svg {
+  margin-top: 20px;
+}
+.riotbar-footer-riot-locale .region-chooser-button-holder {
+  position: relative;
+  display: inline-block;
+}
+.riotbar-footer-riot-locale .region-chooser-button-holder.second {
+  margin: 0 0 0 8px;
+}
+.riotbar-footer-riot-locale .region-chooser-button-holder.second:lang(ar) {
+  margin: 0 8px 0 0;
+}
+.riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #F9F9F9;
+  border-top: 0;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #F9F9F9;
+}
+.riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list .active {
+  display: none;
+}
+.riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list div.current-region, .riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list div.current-language {
+  height: 48px;
+  line-height: 48px;
+  padding: 0 16px;
+  font-weight: 800;
+  font-size: 11px;
+  color: #999999;
+  text-align: left;
+}
+.riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list div.current-region:lang(ar), .riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list div.current-language:lang(ar) {
+  text-align: right;
+}
+.riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list div.current-region svg, .riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list div.current-language svg {
+  margin-top: 20px;
+  float: right;
+  transform: rotate(180deg);
+}
+.riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list div.current-region svg:lang(ar), .riotbar-footer-riot-locale .region-chooser-button-holder .region-select-list div.current-language svg:lang(ar) {
+  float: left;
+}
+.riotbar-footer-riot-locale.active .riotbar-footer-region-changer {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+.riotbar-footer-riot-locale .riotbar-footer-region-changer {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s cubic-bezier(0.06, 0.81, 0, 0.98) 0s;
+  background-color: #333333;
+  text-align: left;
+  padding-top: 48px;
+  padding-left: 48px;
+  padding-bottom: 44px;
+  padding-right: 44px;
+  width: 456px;
+  position: absolute;
+  bottom: -30px;
+}
+.riotbar-footer-riot-locale .riotbar-footer-region-changer:lang(ar) {
+  direction: rtl;
+  text-align: right;
+}
+.riotbar-footer-riot-locale .riotbar-footer-region-changer .header {
+  font-size: 26px;
+  margin-bottom: 29px;
+}
+.riotbar-footer-riot-locale .riotbar-footer-region-changer .region-changer-locale-close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  cursor: pointer;
+}
+.riotbar-footer-riot-locale .riotbar-footer-region-changer .region-changer-locale-close:lang(ar) {
+  right: auto;
+  left: 14px;
+}
+.riotbar-footer-riot-locale .riotbar-footer-region-changer .region-changer-copy {
+  color: #E8E8E8;
+}
+.riotbar-footer-riot-locale .riotbar-footer-region-changer .region-chooser-button-holder, .riotbar-footer-riot-locale .riotbar-footer-region-changer .region-changer-copy {
+  margin-bottom: 29px;
+}
+.riotbar-footer-riot-locale .riotbar-footer-region-changer button {
+  background-color: #282828;
+}
+.riotbar-footer-riot-locale .riotbar-footer-region-changer #switch-regions-now {
+  color: #F9F9F9;
+}
+.riotbar-footer-riot-locale button {
+  cursor: pointer;
+  height: 48px;
+  width: 248px;
+  background-color: #282828;
+  color: #7E7E7E;
+  border-radius: 5px;
+  border-width: 0;
+  /* These custom font references are actually loaded in when the `customFonts` plugin is enabled */
+  /* Main font by default */
+  font-family: "FF Mark W05";
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 11px;
+  text-align: left;
+  padding: 0px 16px;
+}
+.riotbar-footer-riot-locale button:lang(ar) {
+  font-family: "Cairo", Tahoma, sans-serif;
+}
+.riotbar-footer-riot-locale button:lang(ru) {
+  font-family: "Neue Frutiger World W05", Tahoma, sans-serif;
+}
+.riotbar-footer-riot-locale button:lang(ko), .riotbar-footer-riot-locale button:lang(kr) {
+  font-family: "RixSGo", Tahoma, sans-serif;
+}
+.riotbar-footer-riot-locale button:lang(ar) {
+  text-align: right;
+}
+.riotbar-footer-riot-locale button.go {
+  color: #111111;
+}
+.riotbar-footer-riot-locale button svg {
+  float: right;
+  margin-top: 4px;
+}
+.riotbar-footer-riot-locale button svg:lang(ar) {
+  float: left;
+}
+.riotbar-footer-riot-locale button svg path {
+  fill: #7E7E7E;
+}
+
+@media screen and (max-width: 1024px) {
+  .riotbar-footer-riot-locale {
+    max-width: 100%;
+  }
+} .riotbar-social-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.riotbar-social-links {
+  user-select: none;
+  box-sizing: border-box;
+}
+.riotbar-social-links * {
+  box-sizing: border-box;
+}
+
+.riotbar-social-links ul li a .image-alt-text {
+  opacity: 0;
+  user-select: none;
+  color: transparent;
+  text-decoration: none;
+}
+
+.riotbar-social-links ul li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.riotbar-social-links ul li a {
+  display: block;
+  margin: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  opacity: 0.3;
+  transition: opacity 0.2s linear;
+  cursor: pointer;
+}
+.riotbar-social-links ul li a .image-alt-text {
+  display: inline-block;
+  width: 0;
+}
+.riotbar-social-links ul li a:hover, .riotbar-social-links ul li a:active, .riotbar-social-links ul li a:focus {
+  opacity: 1;
+}
+.riotbar-social-links ul li a svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.riotbar-social-links ul li a.link-social svg {
+  width: 24px;
+  height: 24px;
+} .riotbar-legal-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.riotbar-legal-links {
+  user-select: none;
+  box-sizing: border-box;
+}
+.riotbar-legal-links * {
+  box-sizing: border-box;
+}
+
+/* Breakpoints */
+/* Common Mixins */
+.riotbar-legal-links {
+  /* These custom font references are actually loaded in when the `customFonts` plugin is enabled */
+  /* Main font by default */
+  font-family: "FF Mark W05";
+  font-weight: 500;
+  font-size: 11px;
+  color: #7E7E7E;
+  text-align: center;
+}
+.riotbar-legal-links:lang(ar) {
+  font-family: "Cairo", Tahoma, sans-serif;
+}
+.riotbar-legal-links:lang(ru) {
+  font-family: "Neue Frutiger World W05", Tahoma, sans-serif;
+}
+.riotbar-legal-links:lang(ko), .riotbar-legal-links:lang(kr) {
+  font-family: "RixSGo", Tahoma, sans-serif;
+}
+.riotbar-legal-links:lang(ar) {
+  font-family: Tahoma, sans-serif;
+}
+.riotbar-legal-links ul {
+  flex-wrap: wrap;
+}
+.riotbar-legal-links ul li span.updated {
+  color: #ff0000;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.riotbar-legal-links ul li a {
+  display: block;
+  margin: 0 5px;
+  text-decoration: underline;
+  color: #7E7E7E;
+  transition: all 0.2s linear;
+}
+.riotbar-legal-links ul li a:visited {
+  color: #7E7E7E;
+}
+.riotbar-legal-links ul li a:hover, .riotbar-legal-links ul li a:active, .riotbar-legal-links ul li a:focus {
+  color: #7E7E7E;
+}
+.riotbar-legal-links ul li a.bold {
+  font-weight: bold;
+}
+.riotbar-legal-links ul li a.underline {
+  text-decoration: underline;
+}
+.riotbar-legal-links ul li a.updated {
+  display: inline;
+}
+.riotbar-legal-links ul li a.link-privacyPolicy {
+  font-weight: bold;
+} /* Breakpoints */
+/* Common Mixins */
+.riotbar-copyright {
+  /* These custom font references are actually loaded in when the `customFonts` plugin is enabled */
+  /* Main font by default */
+  font-family: "FF Mark W05";
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.316;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+  color: #7E7E7E;
+  transition: color 0.2s linear;
+  word-break: keep-all;
+}
+.riotbar-copyright:lang(ar) {
+  font-family: "Cairo", Tahoma, sans-serif;
+}
+.riotbar-copyright:lang(ru) {
+  font-family: "Neue Frutiger World W05", Tahoma, sans-serif;
+}
+.riotbar-copyright:lang(ko), .riotbar-copyright:lang(kr) {
+  font-family: "RixSGo", Tahoma, sans-serif;
+}
+.riotbar-copyright a {
+  color: #7E7E7E;
+  text-decoration: underline;
+}
+.riotbar-copyright a:hover, .riotbar-copyright a:active, .riotbar-copyright a:focus {
+  color: #7E7E7E;
+}
+.riotbar-copyright:lang(ar) {
+  font-family: Tahoma, sans-serif;
+}
+
+@media (max-width: 500px) {
+  .riotbar-copyright {
+    max-width: 310px;
+  }
+} .riotbar-game-ratings {
+  user-select: none;
+  box-sizing: border-box;
+}
+.riotbar-game-ratings * {
+  box-sizing: border-box;
+}
+
+.riotbar-game-ratings .riotbar-game-rating-logo .image-alt-text {
+  opacity: 0;
+  user-select: none;
+  color: transparent;
+  text-decoration: none;
+}
+
+/* Breakpoints */
+/* Common Mixins */
+.riotbar-game-ratings {
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.riotbar-game-ratings .riotbar-game-rating {
+  margin: 0 10px;
+  max-width: 100%;
+}
+.riotbar-game-ratings .riotbar-game-rating-text-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.riotbar-game-ratings .riotbar-game-rating-logo {
+  display: block;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+  margin: 5px 0;
+  max-width: 100%;
+}
+.riotbar-game-ratings .riotbar-game-rating-text {
+  display: none;
+}
+.riotbar-game-ratings .na-esrb .riotbar-game-rating-logo,
+.riotbar-game-ratings .latam-esrb .riotbar-game-rating-logo {
+  background-image: url("https://cdn.leagueoflegends.com/riotbar/prod/latest-experimental/images/footer/game-rating-logos/na-esrb.png");
+  width: 65px;
+  height: 97px;
+}
+.riotbar-game-ratings .na-esrb .riotbar-game-rating-text,
+.riotbar-game-ratings .latam-esrb .riotbar-game-rating-text {
+  display: inline-block;
+  text-align: left;
+  color: #efefef;
+  margin-left: 6px;
+  line-height: 19px;
+  font-size: 15px;
+  /* These custom font references are actually loaded in when the `customFonts` plugin is enabled */
+  /* Main font by default */
+  font-family: "FF Mark W05";
+}
+.riotbar-game-ratings .na-esrb .riotbar-game-rating-text:lang(ar),
+.riotbar-game-ratings .latam-esrb .riotbar-game-rating-text:lang(ar) {
+  font-family: "Cairo", Tahoma, sans-serif;
+}
+.riotbar-game-ratings .na-esrb .riotbar-game-rating-text:lang(ru),
+.riotbar-game-ratings .latam-esrb .riotbar-game-rating-text:lang(ru) {
+  font-family: "Neue Frutiger World W05", Tahoma, sans-serif;
+}
+.riotbar-game-ratings .na-esrb .riotbar-game-rating-text:lang(ko), .riotbar-game-ratings .na-esrb .riotbar-game-rating-text:lang(kr),
+.riotbar-game-ratings .latam-esrb .riotbar-game-rating-text:lang(ko),
+.riotbar-game-ratings .latam-esrb .riotbar-game-rating-text:lang(kr) {
+  font-family: "RixSGo", Tahoma, sans-serif;
+}
+@media (max-width: 400px) {
+  .riotbar-game-ratings .na-esrb .riotbar-game-rating-text,
+.riotbar-game-ratings .latam-esrb .riotbar-game-rating-text {
+    font-size: 12px;
+  }
+}
+.riotbar-game-ratings .latam-esrb .riotbar-game-rating-logo {
+  background-image: url("https://cdn.leagueoflegends.com/riotbar/prod/latest-experimental/images/footer/game-rating-logos/latam-esrb.png");
+}
+.riotbar-game-ratings .pegi .riotbar-game-rating-logo {
+  background-image: url("https://cdn.leagueoflegends.com/riotbar/prod/latest-experimental/images/footer/game-rating-logos/pegi.png");
+  width: 56px;
+  height: 68px;
+}
+.riotbar-game-ratings .usk-12 .riotbar-game-rating-logo {
+  background-image: url("https://cdn.leagueoflegends.com/riotbar/prod/latest-experimental/images/footer/game-rating-logos/usk-12.png");
+  width: 68px;
+  height: 68px;
+}
+.riotbar-game-ratings .br-rating .riotbar-game-rating-logo {
+  background-image: url("https://cdn.leagueoflegends.com/riotbar/prod/latest-experimental/images/footer/game-rating-logos/br-rating.png");
+  width: 149px;
+  height: 87px;
+}
+.riotbar-game-ratings .oce-rating .riotbar-game-rating-logo {
+  background-image: url("https://cdn.leagueoflegends.com/riotbar/prod/latest-experimental/images/footer/game-rating-logos/oce-rating.png");
+  width: 227px;
+  height: 75px;
+}
+.riotbar-game-ratings .kr-rating .riotbar-game-rating-logo {
+  background-image: url("https://cdn.leagueoflegends.com/riotbar/prod/latest-experimental/images/footer/game-rating-logos/kr-rating.png");
+  width: 450px;
+  height: 71px;
+}
+.riotbar-game-ratings .ru-rating .riotbar-game-rating-logo {
+  background-image: url("https://cdn.leagueoflegends.com/riotbar/prod/latest-experimental/images/footer/game-rating-logos/ru-rating.png");
+  width: 50px;
+  height: 60px;
+}

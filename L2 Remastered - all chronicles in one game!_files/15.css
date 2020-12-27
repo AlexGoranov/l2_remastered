@@ -1,0 +1,38 @@
+/* Breakpoints */
+/* Common Mixins */
+.theme-button {
+  background-color: #4c1c1a !important;
+}
+.theme-button:hover {
+  background-color: #501613 !important;
+}
+.theme-button:active {
+  background-color: #501613 !important;
+}
+
+#riotbar-bar.lol-theme .riotbar-active-link, #riotbar-bar.lol-theme .riotbar-navbar-link:hover {
+    border-color: #542a28;
+    background: #462210;
+}
+#riotbar-bar.lol-theme #riotbar-navbar {
+  /*left: 200px;*/
+    margin: 0 auto;
+}
+#riotbar-bar.lol-theme .nav-dropdown-active a {
+  border-color: #0bc4e2;
+}
+#riotbar-bar.lol-theme .riotbar-navbar-subnav-menu .riotbar-active-sub-item {
+  border-bottom-color: #0bc4e2;
+}
+#riotbar-bar.lol-theme .sub-menu-header-icon svg {
+  margin-top: 20px;
+  margin-left: 15px;
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  #riotbar-bar.lol-theme .riotbar-explore-label svg {
+    display: block;
+    margin-top: 22px;
+  }
+}
